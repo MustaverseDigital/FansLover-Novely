@@ -1,18 +1,132 @@
 @import 'modern-normalize';
 @import '@novely/solid-renderer/dist/styles/index.css';
 
-:root {
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: rgb(94, 253, 253);
+}
+
+.root {
 	--novely-root-background-image: url('./assets/outdoor.png');
 	--novely-root-background-size: contain;
 	--novely-root-background-position: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
-.container {
-	width: 80%;
-	height: 80%;
-	background-image: var(--novely-root-background-image);
-	background-size: var(--novely-root-background-size);
-	background-position: var(--novely-root-background-position);
-	background-repeat: no-repeat;
+.btn_group {
+	position: fixed;
+	top: 0;
+	display: flex;
+	justify-content: space-evenly;
+	padding: 15px 0 0 0;
+	width: 100%;
+	height: 65px;
+	z-index: 99;
 }
 
+.btn_icon {
+	background-image: url('./assets/icon_placeholder.png');
+	background-size: cover; /* 確保圖片覆蓋整個元素 */
+	background-position: center; /* 圖片居中 */
+	border: 1px solid black;
+	border-radius: 5rem;
+	width: 2rem;
+	height: 2rem;
+}
+
+.btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 10rem;
+	border: 2px solid black;
+	border-radius: 5rem;
+	background-color: white;
+	padding: 1rem;
+}
+
+.btn_group_footer {
+	position: fixed;
+	display: flex;
+	justify-self: center;
+	align-items: center;
+	justify-content: space-evenly;
+	padding: 15px;
+	width: 100%;
+	height: 65px;
+	bottom: 0rem;
+	z-index: 99;
+	background-color: rgb(94, 253, 253);
+}
+
+.btn_footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 2px solid black;
+	border-radius: 1rem;
+	background-color: white;
+	padding: 10px;
+}
+
+.control-panel {
+	bottom: 5rem;
+}
+
+@media (max-aspect-ratio: 0.8 / 1) {
+	.action-dialog {
+		bottom: 5rem;
+		left: unset;
+		transform: unset;
+		width: 100%;
+	}
+}
+
+.background {
+	object-fit: cover;
+	object-position: 50% 50%;
+	z-index: 1;
+	width: 100vw;
+	height: calc(100% - 65px);
+	position: fixed;
+}
+
+.characters {
+	z-index: 3;
+	pointer-events: none;
+	justify-content: center;
+	align-items: flex-end;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	position: fixed;
+	overflow: hidden;
+	bottom: 5rem;
+}
+
+.game {
+	display: flex;
+	background: #000;
+	width: 100%;
+	height: calc(100% - 130px);
+}
+
+.main-menu {
+	min-width: 24rem;
+	padding: 0 1rem;
+	display: flex;
+	overflow: overlay;
+}
+
+.saves {
+	gap: 1rem;
+	height: calc(100% - 130px);
+	padding: 0 1rem;
+	display: flex;
+}
