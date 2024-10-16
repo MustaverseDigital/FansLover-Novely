@@ -10,9 +10,6 @@ body {
 }
 
 .root {
-	--novely-root-background-image: url('./assets/outdoor.png');
-	--novely-root-background-size: contain;
-	--novely-root-background-position: center;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -88,15 +85,6 @@ body {
 	}
 }
 
-.background {
-	object-fit: cover;
-	object-position: 50% 50%;
-	z-index: 1;
-	width: 100vw;
-	height: calc(100% - 65px);
-	position: fixed;
-}
-
 .characters {
 	z-index: 3;
 	pointer-events: none;
@@ -116,12 +104,16 @@ body {
 	width: 100%;
 	height: calc(100% - 130px);
 }
-
 .main-menu {
 	min-width: 24rem;
 	padding: 0 1rem;
 	display: flex;
 	overflow: overlay;
+	height: calc(100% - 130px);
+	background-image: url('./assets/outdoor.png');
+	background-repeat: repeat; /* 防止背景圖片重複 */
+	background-size: cover; /* 確保背景圖片覆蓋整個元素 */
+	background-position: center; /* 背景圖片居中 */
 }
 
 .saves {
